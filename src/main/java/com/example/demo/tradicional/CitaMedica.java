@@ -18,15 +18,16 @@ public class CitaMedica {
 		this.fechaCita=fechaCita;
 		
 		Medico med = new Medico();
-		medico.setCedula(ced_medico);
-		medico.setNombre(nombreMedico);
+		
+		med.setCedula(cedMedico);
+		med.setNombre(nombreMedico);
 		
 		this.medico= med;
 		
 		
 		Paciente pac = new Paciente();
-		paciente.setCedula(cedulaPaciente);
-		paciente.setNombre(nombrePaciente);
+		pac.setCedula(cedulaPaciente);
+		pac.setNombre(nombrePaciente);
 		
 		this.paciente = pac;
 	}
