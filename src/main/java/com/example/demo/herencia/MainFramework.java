@@ -13,12 +13,12 @@ public class MainFramework {
 		//te.setCodigoIESS("223132132");
 		te.setTipo("TE");*/
 		
-		PacienteH ninio = new PacienteNinioH();
+		/*PacienteH ninio = new PacienteNinioH();
 		ninio.setCedula("12154415345");
-		ninio.setPesoNacimiento(8);
+		//ninio.setPesoNacimiento(8);
 		ninio.setNombre("Daniel");
 		//te.setCodigoIESS("223132132");
-		ninio.setTipo("N");
+		ninio.setTipo("N");*/
 		
 		PacienteCancerH pacienteC = new PacienteCancerH();
 		pacienteC.setCedula("125445");
