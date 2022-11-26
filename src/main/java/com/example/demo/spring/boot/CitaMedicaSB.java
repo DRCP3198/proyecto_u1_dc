@@ -18,6 +18,7 @@ public class CitaMedicaSB {
 		this.numero = numero;
 		this.fechaCita = fechaCita;
 		this.fechaAgenda = LocalDateTime.now();
+		this.paciente=ph;
 
 		Integer valor_descuento = ph.calcularDescuento();
 		System.out.println("Valor: " + valor_descuento);

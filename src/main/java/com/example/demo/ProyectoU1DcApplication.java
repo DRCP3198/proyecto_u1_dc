@@ -27,6 +27,10 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 	private PacienteTerceraEdadSB pacientTE;
 	
 	@Autowired
+	private PacienteCancerSB pacienteC;
+	
+	
+	@Autowired
 	private CitaMedicaSB cita;
 	
 	@Autowired
@@ -43,14 +47,24 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("SPRING BOOT");
-		System.out.println(pacientTE);
+		
+		//PACIENTE 1:
 		this.pacientTE.setCodigoIESS("15s57dwe52wds4");
 		this.pacientTE.setNombre("Edison");
-		this.pacientTE.setTipo("T");
+		this.pacientTE.setTipo("TE");
 		this.pacientTE.setCedula("15458742512");
 		
 		System.out.println(pacientTE);
 		cita.agendar("123123", LocalDateTime.of(2022,12 ,2,8,30), pacientTE, medico);
+		
+		System.out.println();
+		System.out.println("***************************************");
+		//PACIENTE 2:
+		this.pacienteC.setNombre("Alberto C");
+		this.pacienteC.setTipo("A");
+		this.pacienteC.setCedula("15458742512");
+		System.out.println(pacienteC);
+		cita.agendar("123123", LocalDateTime.of(2022,12 ,2,23,30), pacienteC, medico);
 		
 	}
 
