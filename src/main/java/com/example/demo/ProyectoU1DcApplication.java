@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.example.demo.banco.modelo.CuentaBancaria;
+import com.example.demo.banco.service.ICuentaBancariaService;
 import com.example.demo.herencia.PacienteCancerH;
 import com.example.demo.herencia.PacienteTerceraEdadH;
 import com.example.demo.spring.boot.CitaMedicaSB;
@@ -22,20 +25,8 @@ import com.example.demo.spring.boot.PacienteTerceraEdadSB;
 @SpringBootApplication
 public class ProyectoU1DcApplication implements CommandLineRunner {
     
-	
 	@Autowired
-	private PacienteTerceraEdadSB pacientTE;
-	
-	@Autowired
-	private PacienteCancerSB pacienteC;
-	
-	
-	@Autowired
-	private CitaMedicaSB cita;
-	
-	@Autowired
-	private MedicoSB medico;
-	
+	private ICuentaBancariaService bancariaService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1DcApplication.class, args);
@@ -48,23 +39,20 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 		// TODO Auto-generated method stub
 		System.out.println("SPRING BOOT");
 		
-		//PACIENTE 1:
-		this.pacientTE.setCodigoIESS("15s57dwe52wds4");
-		this.pacientTE.setNombre("Edison");
-		this.pacientTE.setTipo("TE");
-		this.pacientTE.setCedula("15458742512");
+		CuentaBancaria cuenta1 = new CuentaBancaria();
+		cuenta1.setNumero("1255485");
+		cuenta1.setTipo("A");
+		cuenta1.setTitular("Dillan Coloma");
+		cuenta1.setSaldo(new BigDecimal(100));
+		this.bancariaService.insertar(cuenta1);
 		
-		System.out.println(pacientTE);
-		cita.agendar("123123", LocalDateTime.of(2022,12 ,2,8,30), pacientTE, medico);
-		
-		System.out.println();
-		System.out.println("***************************************");
-		//PACIENTE 2:
-		this.pacienteC.setNombre("Alberto C");
-		this.pacienteC.setTipo("A");
-		this.pacienteC.setCedula("15458742512");
-		System.out.println(pacienteC);
-		cita.agendar("123123", LocalDateTime.of(2022,12 ,2,23,30), pacienteC, medico);
+		CuentaBancaria cuenta2 = new CuentaBancaria();
+		cuenta2.setNumero("125548522s");
+		cuenta2.setTipo("A");
+		cuenta2.setTitular("Israel Coloma");
+		cuenta2.setSaldo(new BigDecimal(200));
+		this.bancariaService.insertar(cuenta2);
+	
 		
 	}
 

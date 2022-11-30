@@ -13,7 +13,12 @@ public class CuentaBancaria {
 	
     
     
-    //Metodos set y  get
+    @Override
+	public String toString() {
+		return "CuentaBancaria [numero=" + numero + ", tipo=" + tipo + ", saldo=" + saldo + ", titular=" + titular
+				+ "]";
+	}
+	//Metodos set y  get
     public String getNumero() {
 		return numero;
 	}
