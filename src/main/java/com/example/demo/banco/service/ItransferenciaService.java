@@ -11,7 +11,7 @@ public interface ITransferenciaService {
 	
 	public List<Transferencia> buscarReporte();
 	public void realizar(String numOrigen, String numDestino, BigDecimal monto);
-	
+	//"HOLA MUNDO"
 	//CRUD CONCLUIR DEBER
 		public void actualizar(Transferencia transferencia);
 		public void insertar (Transferencia transferencia);
