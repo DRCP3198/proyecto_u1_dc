@@ -2,18 +2,15 @@ package com.example.demo.banco.repository;
 
 import java.util.List;
 
-import com.example.demo.banco.modelo.CuentaBancaria;
 import com.example.demo.banco.modelo.Transferencia;
 
 public interface ITransferenciaRepository {
 
+	//CRUD: siempre hasta tener experiencia
 	
-	//CRUD siempre vamos a contruir el crud
-		public Transferencia buscar(Integer id); //me busque por identificacion
-		//
-		public void actualizar(Transferencia transferencia);
-		public void insertar(Transferencia transferencia);
-		public void borrar(Integer id);
-		
-		public List<Transferencia> buscarTodos();
+	public Transferencia buscar(Integer id);
+	public void actualizar(Transferencia tranferencia);
+	public void insertar(Transferencia tranferencia);
+	public void borrar(Integer id);
+	public List<Transferencia> buscarTodo ();
 }

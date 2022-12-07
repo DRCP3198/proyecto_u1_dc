@@ -42,6 +42,11 @@ public class Transferencia {
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
+	@Override
+	public String toString() {
+		return "Transferencia [cuentaOrigen=" + cuentaOrigen + ", cuentaDestino=" + cuentaDestino + ", Monto=" + Monto
+				+ ", fecha=" + fecha + ", numero=" + numero + "]";
+	}
 	
 	
 	
