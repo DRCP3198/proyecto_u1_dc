@@ -58,12 +58,19 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 		cuenta2.setSaldo(new BigDecimal(200));
 		this.bancariaService.insertar(cuenta2);
 		
+		System.out.println("Saldos Actuales: ");
+		CuentaBancaria cuentaActual1 = this.bancariaService.buscarPorNumero("1255485");
+		CuentaBancaria cuentaActual2 = this.bancariaService.buscarPorNumero("125548522s");
+		
+		System.out.println("saldo actual: " + cuentaActual1.getSaldo());
+		System.out.println("saldo actual: " + cuentaActual2.getSaldo());
+		
 		System.out.println("REPORTE 1");
 		for(Transferencia t:this.iTransferenciaService.buscarReporte()) {
 			System.out.println(t);
 		}
 		
-		this.iTransferenciaService.realizar("1255485", "125548522s", new BigDecimal(100));
+		this.iTransferenciaService.realizar("1255485", "125548522s", new BigDecimal(30));
 		
 		System.out.println("REPORTE 2");
 		for(Transferencia t:this.iTransferenciaService.buscarReporte()) {
