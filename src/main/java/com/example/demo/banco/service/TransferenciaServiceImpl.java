@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.banco.modelo.CuentaBancaria;
 import com.example.demo.banco.modelo.Transferencia;
 import com.example.demo.banco.repository.ITransferenciaRepository;
-@Service
+@Service("grande")
 public class TransferenciaServiceImpl implements ITransferenciaService{
 	
 	

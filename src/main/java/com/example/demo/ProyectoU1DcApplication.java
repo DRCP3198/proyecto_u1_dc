@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,6 +31,7 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 	@Autowired
 	private ICuentaBancariaService bancariaService;
 	
+	@Qualifier("grande")
 	@Autowired
 	private ITransferenciaService iTransferenciaService;
 	
