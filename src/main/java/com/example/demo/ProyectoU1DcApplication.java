@@ -13,6 +13,12 @@ import com.example.demo.banco.modelo.CuentaBancaria;
 import com.example.demo.banco.modelo.Transferencia;
 import com.example.demo.banco.service.ICuentaBancariaService;
 import com.example.demo.banco.service.ITransferenciaService;
+import com.example.demo.cita.modelo.CitaMedica;
+import com.example.demo.cita.modelo.Medico;
+import com.example.demo.cita.modelo.Paciente;
+import com.example.demo.cita.service.ICitaMedicaService;
+import com.example.demo.cita.service.IMedicoService;
+import com.example.demo.cita.service.IPacienteService;
 import com.example.demo.ejercicio1.modelo.Propietario;
 import com.example.demo.ejercicio1.modelo.Vehiculo;
 import com.example.demo.ejercicio1.service.IMatriculaService;
@@ -33,6 +39,7 @@ import com.example.demo.spring.boot.PacienteTerceraEdadSB;
 @SpringBootApplication
 public class ProyectoU1DcApplication implements CommandLineRunner {
     
+	//CUENTA BANCARIAS
 	/*@Autowired
 	private ICuentaBancariaService bancariaService;
 	
@@ -40,14 +47,26 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 	@Autowired
 	private ITransferenciaService iTransferenciaService;
 	*/
-	@Autowired
+	
+	//EJERCICIO 1
+	/*@Autowired
 	private IVehiculoService iVehiculoService;
 	
 	@Autowired
 	private IPropietarioService iPropietarioService;
 	
+	@Autowired
 	private IMatriculaService iMatriculaService;
+	*/
 	
+	@Autowired
+	private ICitaMedicaService iCitaMedicaService;
+	
+	@Autowired
+	private IPacienteService iPacienteService;
+	
+	@Autowired 
+	private IMedicoService iMedicoService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1DcApplication.class, args);
@@ -60,7 +79,23 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 		// TODO Auto-generated method stub
 		System.out.println("SPRING BOOT");
 		
-		//Opcion 1
+		Paciente p = new Paciente();
+		p.setCedula("1725247665");
+		p.setNombre("Israel C");
+		p.setTipo("A");
+		this.iPacienteService.crear(p);
+		p.setCedula("1725247645");
+		this.iPacienteService.modificar(p);
+		
+		Medico med = new Medico();
+		med.setCedula("1751457167");
+		med.setNombre("Jose Pozo");
+		this.iMedicoService.guardar(med);
+		
+		this.iCitaMedicaService.crearCita("1725247645", "A");
+		
+		
+		/*//Opcion 1
 		Vehiculo vehi = new Vehiculo();
 		vehi.setMarca("Toyta");
 		vehi.setPlaca("PDF12654");
@@ -83,6 +118,7 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 		 this.iPropietarioService.guardar(propietario);
 		
 		//Opcion 3
+		 this.iMatriculaService.matricular("15774566", "PDF12654");*/
 		
 		
 		
