@@ -15,6 +15,7 @@ import com.example.demo.banco.service.ICuentaBancariaService;
 import com.example.demo.banco.service.ITransferenciaService;
 import com.example.demo.ejercicio1.modelo.Propietario;
 import com.example.demo.ejercicio1.modelo.Vehiculo;
+import com.example.demo.ejercicio1.service.IMatriculaNuevaService;
 import com.example.demo.ejercicio1.service.IMatriculaService;
 import com.example.demo.ejercicio1.service.IPropietarioService;
 import com.example.demo.ejercicio1.service.IVehiculoService;
@@ -46,8 +47,14 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 	@Autowired
 	private IPropietarioService iPropietarioService;
 	
-	private IMatriculaService iMatriculaService;
+	@Autowired
+	@Qualifier("pesado")
+	private IMatriculaNuevaService iMatriculaService;
 	
+	
+	@Autowired
+	@Qualifier("liviano")
+	private IMatriculaNuevaService iMatriculaServiceLiviano;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1DcApplication.class, args);
@@ -81,9 +88,10 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 		propietario.setFechaNacimiento(LocalDateTime.of(1978, 8,31,12,35));
 		propietario.setNombre("Edison");
 		 this.iPropietarioService.guardar(propietario);
-		
-		//Opcion 3
-		
+		 
+		 
+		 //Logica de negocio no puede estar aqui
+	
 		
 		
 		
