@@ -28,8 +28,10 @@ public class GestorMatriculaServiceImpl implements IGestorMatriculaService {
 		
 		//Opcion 3
 		    this.iMatriculaService.matricular("154774566", "PDF12654");
-		
+		//565687564656
 		}
+		
+	
 	}
 
 }
