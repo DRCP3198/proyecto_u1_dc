@@ -15,6 +15,7 @@ import com.example.demo.banco.service.ICuentaBancariaService;
 import com.example.demo.banco.service.ITransferenciaService;
 import com.example.demo.ejercicio1.modelo.Propietario;
 import com.example.demo.ejercicio1.modelo.Vehiculo;
+import com.example.demo.ejercicio1.service.IGestorMatriculaService;
 import com.example.demo.ejercicio1.service.IMatriculaNuevaService;
 import com.example.demo.ejercicio1.service.IMatriculaService;
 import com.example.demo.ejercicio1.service.IPropietarioService;
@@ -48,6 +49,10 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 	private IPropietarioService iPropietarioService;
 	
 	@Autowired
+	private IGestorMatriculaService gestorMatriculaService;
+	
+	
+	@Autowired
 	@Qualifier("pesado")
 	private IMatriculaNuevaService iMatriculaService;
 	
@@ -72,7 +77,7 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 		vehi.setMarca("Toyta");
 		vehi.setPlaca("PDF12654");
 		vehi.setPrecio(new BigDecimal(20000));
-		vehi.setTipo("P");
+		vehi.setTipo("D");
 		this.iVehiculoService.crear(vehi);
 		//Es una opcion
 		vehi.setPrecio(new BigDecimal(10000));
@@ -92,7 +97,7 @@ public class ProyectoU1DcApplication implements CommandLineRunner {
 		 
 		 //Logica de negocio no puede estar aqui
 	
-		
+		this.gestorMatriculaService.matricular("154774566", "PDF12654");
 		
 		
 		/*CuentaBancaria cuenta1 = new CuentaBancaria();
